@@ -35,6 +35,30 @@ test.describe("portfolio production experience", () => {
   test("supports navigation and contact paths", async ({ page }) => {
     await page.goto("/");
 
+    const desktopNavigation = page.locator(".site-nav__links");
+    if (await desktopNavigation.isVisible()) {
+      const navigationStyles = await desktopNavigation.evaluate((element) => {
+        const list = getComputedStyle(element);
+        const item = getComputedStyle(element.querySelector("li")!);
+
+        return {
+          alignItems: list.alignItems,
+          listStyleType: list.listStyleType,
+          paddingInlineStart: list.paddingInlineStart,
+          itemDisplay: item.display,
+          itemListStyleType: item.listStyleType,
+        };
+      });
+
+      expect(navigationStyles).toEqual({
+        alignItems: "stretch",
+        listStyleType: "none",
+        paddingInlineStart: "0px",
+        itemDisplay: "flex",
+        itemListStyleType: "none",
+      });
+    }
+
     await page.getByRole("link", { name: "Explore my work" }).click();
     await expect(page.locator("#work")).toBeInViewport();
     await expect(
