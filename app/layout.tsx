@@ -65,6 +65,10 @@ export const metadata: Metadata = {
     description,
     images: [`${siteUrl}/og-uswds.png`],
   },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+  },
   manifest: "/manifest.webmanifest",
 };
 

@@ -30,6 +30,10 @@ test.describe("portfolio production experience", () => {
     await expect(
       page.locator('meta[property="og:image:height"]'),
     ).toHaveAttribute("content", "907");
+    await expect(page.locator('link[rel="icon"]')).toHaveAttribute(
+      "href",
+      "/favicon.svg",
+    );
   });
 
   test("supports navigation and contact paths", async ({ page }) => {
@@ -108,7 +112,18 @@ test.describe("portfolio production experience", () => {
     expect(await manifest.json()).toMatchObject({
       name: "Mustafa Sadiq | Software Application Engineer",
       theme_color: "#005ea8",
+      icons: [
+        {
+          src: "/favicon.svg",
+          sizes: "any",
+          type: "image/svg+xml",
+        },
+      ],
     });
+
+    const favicon = await request.get("/favicon.svg");
+    expect(favicon.ok()).toBeTruthy();
+    expect(favicon.headers()["content-type"]).toContain("image/svg+xml");
   });
 
   test("loads without browser errors or failed same-origin resources", async ({
