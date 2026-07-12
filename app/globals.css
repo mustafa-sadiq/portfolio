@@ -1167,7 +1167,7 @@ svg {
   }
 
   .hero::after {
-    right: 1rem;
+    display: none;
   }
 
   .hero-grid {

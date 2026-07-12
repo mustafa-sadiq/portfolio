@@ -16,6 +16,10 @@ test.describe("portfolio production experience", () => {
       }),
     ).toBeVisible();
     await expect(page.getByText("22M+")).toBeVisible();
+    const educationCard = page.locator(".education-card");
+    await expect(educationCard).not.toContainText("GPA");
+    await expect(educationCard).toContainText("2026");
+    await expect(educationCard).toContainText("2022");
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
       "https://mustafasadiq.com/",
@@ -81,8 +85,17 @@ test.describe("portfolio production experience", () => {
     const dimensions = await page.evaluate(() => ({
       viewport: document.documentElement.clientWidth,
       content: document.documentElement.scrollWidth,
+      heroAccentDisplay: getComputedStyle(
+        document.querySelector(".hero")!,
+        "::after",
+      ).display,
     }));
     expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport + 1);
+    if (dimensions.viewport <= 768) {
+      expect(dimensions.heroAccentDisplay).toBe("none");
+    } else {
+      expect(dimensions.heroAccentDisplay).not.toBe("none");
+    }
   });
 
   test("publishes crawlable SEO resources and structured data", async ({
