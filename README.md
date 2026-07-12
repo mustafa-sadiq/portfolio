@@ -2,11 +2,11 @@
 
 [![Production pipeline](https://github.com/mustafasadiq/portfolio/actions/workflows/production.yml/badge.svg)](https://github.com/mustafasadiq/portfolio/actions/workflows/production.yml)
 
-Static personal portfolio for [mustafasadiq.com](https://mustafasadiq.com). It is built with Next.js, React, TypeScript, Tailwind CSS, and shadcn-style UI primitives, then exported as static files for GitHub Pages.
+Static personal portfolio for [mustafasadiq.com](https://mustafasadiq.com). It is built with Next.js, React, TypeScript, the U.S. Web Design System, and shadcn-style UI primitives, then exported as static files for GitHub Pages.
 
 ## Architecture
 
-- `app/` - the page, metadata, and global styling
+- `app/` - the page, metadata, structured data, crawl directives, and USWDS theme
 - `components/ui/` - reusable shadcn-style interface primitives
 - `lib/` - shared utilities
 - `public/` - production static assets
@@ -67,6 +67,7 @@ Playwright runs the exported production site in desktop and mobile Chromium. It 
 - canonical and social metadata
 - navigation and contact links
 - responsive layout without horizontal overflow
+- JSON-LD structured data, sitemap, robots, and web manifest
 
 Failed browser runs retain screenshots, videos, traces, and an HTML report.
 

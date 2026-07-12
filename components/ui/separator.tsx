@@ -1,13 +1,9 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-function Separator({ className, ...props }: React.ComponentProps<"div">) {
+function Separator({ className, ...props }: React.ComponentProps<"hr">) {
   return (
-    <div
-      role="separator"
-      className={cn("h-px w-full bg-white/9", className)}
-      {...props}
-    />
+    <hr role="separator" className={cn("ui-separator", className)} {...props} />
   );
 }
 
