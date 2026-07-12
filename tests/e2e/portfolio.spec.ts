@@ -24,11 +24,11 @@ test.describe("portfolio production experience", () => {
     await expect(educationCard.locator("time.degree-year")).toHaveCount(2);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
-      "https://mustafasadiq.com/",
+      "https://www.mustafasadiq.com/",
     );
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
       "content",
-      "https://mustafasadiq.com/og-uswds.png",
+      "https://www.mustafasadiq.com/og-uswds.png",
     );
     await expect(
       page.locator('meta[property="og:image:width"]'),
@@ -115,12 +115,12 @@ test.describe("portfolio production experience", () => {
     const robots = await request.get("/robots.txt");
     expect(robots.ok()).toBeTruthy();
     expect(await robots.text()).toContain(
-      "Sitemap: https://mustafasadiq.com/sitemap.xml",
+      "Sitemap: https://www.mustafasadiq.com/sitemap.xml",
     );
 
     const sitemap = await request.get("/sitemap.xml");
     expect(sitemap.ok()).toBeTruthy();
-    expect(await sitemap.text()).toContain("https://mustafasadiq.com");
+    expect(await sitemap.text()).toContain("https://www.mustafasadiq.com");
 
     const manifest = await request.get("/manifest.webmanifest");
     expect(manifest.ok()).toBeTruthy();

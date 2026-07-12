@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "@uswds/uswds/css/uswds.min.css";
 import "./globals.css";
 
-const siteUrl = "https://mustafasadiq.com";
+const siteUrl = "https://www.mustafasadiq.com";
 const title = "Mustafa Sadiq | Software Application Engineer";
 const description =
   "Software application engineer modernizing secure, accessible federal digital services across AWS, Azure, Java, .NET, Python, and React.";

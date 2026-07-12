@@ -2,7 +2,7 @@
 
 [![Production pipeline](https://github.com/mustafasadiq/portfolio/actions/workflows/production.yml/badge.svg)](https://github.com/mustafasadiq/portfolio/actions/workflows/production.yml)
 
-Static personal portfolio for [mustafasadiq.com](https://mustafasadiq.com). It is built with Next.js, React, TypeScript, the U.S. Web Design System, and shadcn-style UI primitives, then exported as static files for GitHub Pages.
+Static personal portfolio for [www.mustafasadiq.com](https://www.mustafasadiq.com). It is built with Next.js, React, TypeScript, the U.S. Web Design System, and shadcn-style UI primitives, then exported as static files for GitHub Pages.
 
 ## Architecture
 
@@ -90,7 +90,7 @@ The GitHub Pages deployment job runs only on `main`, and only after all three ga
 In the repository settings:
 
 1. Set **Pages > Build and deployment > Source** to **GitHub Actions**.
-2. Set the custom domain to `mustafasadiq.com`.
+2. Set the custom domain to `www.mustafasadiq.com`. GitHub Pages will redirect the apex domain to `www` when both DNS variants point to GitHub Pages.
 3. Enable **Enforce HTTPS** after DNS propagation completes.
 
 DNS records:
