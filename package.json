@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
+    "@uswds/uswds": "^3.13.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.468.0",
@@ -35,7 +36,6 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.61.1",
-    "@tailwindcss/postcss": "^4.3.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^22.10.2",
@@ -47,7 +47,6 @@
     "jsdom": "^26.1.0",
     "prettier": "^3.9.5",
     "serve": "^14.2.6",
-    "tailwindcss": "^4.3.2",
     "typescript": "^5.7.2",
     "vitest": "^4.1.10"
   }

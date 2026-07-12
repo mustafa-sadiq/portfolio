@@ -29,11 +29,31 @@ describe("portfolio home page", () => {
     ).toHaveAttribute("href", "#work");
     expect(
       screen.getAllByRole("link", {
-        name: /let's talk|get in touch|start a conversation/i,
+        name: /contact|get in touch|start a conversation/i,
       }),
-    ).toHaveLength(3);
+    ).toHaveLength(4);
     expect(
       screen.getAllByRole("link", { name: /linkedin/i })[0],
     ).toHaveAttribute("href", "https://www.linkedin.com/in/mustafasadiq/");
+  });
+
+  it("publishes Person and WebSite structured data", () => {
+    const { container } = render(<Home />);
+    const script = container.querySelector(
+      'script[type="application/ld+json"]',
+    );
+
+    expect(script).not.toBeNull();
+    const data = JSON.parse(script?.textContent ?? "{}");
+    expect(data["@context"]).toBe("https://schema.org");
+    expect(data["@graph"]).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ "@type": "Person", name: "Mustafa Sadiq" }),
+        expect.objectContaining({
+          "@type": "WebSite",
+          name: "Mustafa Sadiq Portfolio",
+        }),
+      ]),
+    );
   });
 });
