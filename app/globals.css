@@ -848,10 +848,26 @@ svg {
 }
 
 .degree {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-block: 1.25rem;
+  display: grid;
+  grid-template-columns: 3.75rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  padding-block: 1.5rem;
+}
+
+.degree-year {
+  padding-top: 0.1rem;
+  border-right: 0.2rem solid var(--color-accent-cool);
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.education-card .ui-separator {
+  margin-left: 5rem;
 }
 
 .degree h4 {
@@ -1281,7 +1297,12 @@ svg {
   }
 
   .degree {
-    flex-direction: column;
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .education-card .ui-separator {
+    margin-left: 4.1rem;
   }
 
   .footer-secondary .site-container {

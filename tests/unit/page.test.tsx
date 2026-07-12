@@ -23,6 +23,8 @@ describe("portfolio home page", () => {
     expect(education.queryByText(/GPA/)).not.toBeInTheDocument();
     expect(education.getByText("2026")).toBeInTheDocument();
     expect(education.getByText("2022")).toBeInTheDocument();
+    expect(educationCard.querySelectorAll(".ui-tag")).toHaveLength(0);
+    expect(educationCard.querySelectorAll("time.degree-year")).toHaveLength(2);
   });
 
   it("exposes accessible navigation and contact actions", () => {
