@@ -20,6 +20,8 @@ test.describe("portfolio production experience", () => {
     await expect(educationCard).not.toContainText("GPA");
     await expect(educationCard).toContainText("2026");
     await expect(educationCard).toContainText("2022");
+    await expect(educationCard.locator(".ui-tag")).toHaveCount(0);
+    await expect(educationCard.locator("time.degree-year")).toHaveCount(2);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
       "https://mustafasadiq.com/",

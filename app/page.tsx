@@ -504,19 +504,23 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <div className="degree">
+                  <time className="degree-year" dateTime="2026">
+                    2026
+                  </time>
                   <div>
                     <h4>M.S. Computer Science</h4>
                     <p>University of Illinois Urbana-Champaign</p>
                   </div>
-                  <Badge>2026</Badge>
                 </div>
                 <Separator />
                 <div className="degree">
+                  <time className="degree-year" dateTime="2022">
+                    2022
+                  </time>
                   <div>
                     <h4>B.S. Computer Science</h4>
                     <p>Rutgers University · Summa Cum Laude</p>
                   </div>
-                  <Badge>2022</Badge>
                 </div>
               </CardContent>
             </Card>
