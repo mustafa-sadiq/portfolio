@@ -103,9 +103,9 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://mustafasadiq.com/#person",
+      "@id": "https://www.mustafasadiq.com/#person",
       name: "Mustafa Sadiq",
-      url: "https://mustafasadiq.com",
+      url: "https://www.mustafasadiq.com",
       email: "mailto:mustafa.sadiq@outlook.com",
       jobTitle: "Software Application Engineer",
       description:
@@ -138,13 +138,13 @@ const structuredData = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://mustafasadiq.com/#website",
-      url: "https://mustafasadiq.com",
+      "@id": "https://www.mustafasadiq.com/#website",
+      url: "https://www.mustafasadiq.com",
       name: "Mustafa Sadiq Portfolio",
       description:
         "Software engineering portfolio focused on secure, accessible public-impact digital services.",
       inLanguage: "en-US",
-      author: { "@id": "https://mustafasadiq.com/#person" },
+      author: { "@id": "https://www.mustafasadiq.com/#person" },
     },
   ],
 };
