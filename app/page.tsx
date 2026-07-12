@@ -508,7 +508,7 @@ export default function Home() {
                     <h4>M.S. Computer Science</h4>
                     <p>University of Illinois Urbana-Champaign</p>
                   </div>
-                  <Badge>2026 · 3.58 GPA</Badge>
+                  <Badge>2026</Badge>
                 </div>
                 <Separator />
                 <div className="degree">
@@ -516,7 +516,7 @@ export default function Home() {
                     <h4>B.S. Computer Science</h4>
                     <p>Rutgers University · Summa Cum Laude</p>
                   </div>
-                  <Badge>2022 · 4.00 GPA</Badge>
+                  <Badge>2022</Badge>
                 </div>
               </CardContent>
             </Card>

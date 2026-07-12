@@ -3,7 +3,7 @@ import Home from "@/app/page";
 
 describe("portfolio home page", () => {
   it("renders the primary software engineering profile", () => {
-    render(<Home />);
+    const { container } = render(<Home />);
 
     expect(
       screen.getByRole("heading", {
@@ -16,6 +16,13 @@ describe("portfolio home page", () => {
     expect(
       screen.getByRole("heading", { name: "NextGen Information Gateway" }),
     ).toBeInTheDocument();
+    const educationCard = container.querySelector(".education-card");
+    expect(educationCard).not.toBeNull();
+    if (!educationCard) throw new Error("Education card not found");
+    const education = within(educationCard as HTMLElement);
+    expect(education.queryByText(/GPA/)).not.toBeInTheDocument();
+    expect(education.getByText("2026")).toBeInTheDocument();
+    expect(education.getByText("2022")).toBeInTheDocument();
   });
 
   it("exposes accessible navigation and contact actions", () => {
