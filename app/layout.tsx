@@ -5,7 +5,11 @@ import "./globals.css";
 const siteUrl = "https://www.mustafasadiq.com";
 const title = "Mustafa Sadiq | Software Application Engineer";
 const description =
-  "Software application engineer modernizing secure, accessible federal digital services across AWS, Azure, Java, .NET, Python, and React.";
+  "Mustafa Sadiq's software engineering portfolio: secure cloud modernization and accessible digital services using AWS, Azure, Java, .NET, Python, and React.";
+const socialTitle = "Mustafa Sadiq | Software Engineer Portfolio";
+const socialDescription =
+  "Explore secure cloud modernization, accessible digital services, and full-stack engineering work across AWS, Azure, Java, .NET, Python, and React.";
+const socialImage = `${siteUrl}/portfolio-social-card.jpg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -42,28 +46,32 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title,
-    description,
+    title: socialTitle,
+    description: socialDescription,
     url: siteUrl,
     siteName: "Mustafa Sadiq Portfolio",
     locale: "en_US",
-    type: "profile",
-    firstName: "Mustafa",
-    lastName: "Sadiq",
+    type: "website",
     images: [
       {
-        url: `${siteUrl}/og-uswds.png`,
-        width: 1734,
-        height: 907,
-        alt: "Mustafa Sadiq, Software Application Engineer",
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "Mustafa Sadiq — Software Engineer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
-    images: [`${siteUrl}/og-uswds.png`],
+    title: socialTitle,
+    description: socialDescription,
+    images: [
+      {
+        url: socialImage,
+        alt: "Mustafa Sadiq — Software Engineer Portfolio",
+      },
+    ],
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],

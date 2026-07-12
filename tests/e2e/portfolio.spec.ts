@@ -28,14 +28,25 @@ test.describe("portfolio production experience", () => {
     );
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
       "content",
-      "https://www.mustafasadiq.com/og-uswds.png",
+      "https://www.mustafasadiq.com/portfolio-social-card.jpg",
     );
     await expect(
       page.locator('meta[property="og:image:width"]'),
-    ).toHaveAttribute("content", "1734");
+    ).toHaveAttribute("content", "1200");
     await expect(
       page.locator('meta[property="og:image:height"]'),
-    ).toHaveAttribute("content", "907");
+    ).toHaveAttribute("content", "630");
+    await expect(
+      page.locator('meta[property="og:image:type"]'),
+    ).toHaveAttribute("content", "image/jpeg");
+    await expect(page.locator('meta[property="og:type"]')).toHaveAttribute(
+      "content",
+      "website",
+    );
+    await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
+      "content",
+      "Mustafa Sadiq | Software Engineer Portfolio",
+    );
     await expect(page.locator('link[rel="icon"]')).toHaveAttribute(
       "href",
       "/favicon.svg",
@@ -139,6 +150,11 @@ test.describe("portfolio production experience", () => {
     const favicon = await request.get("/favicon.svg");
     expect(favicon.ok()).toBeTruthy();
     expect(favicon.headers()["content-type"]).toContain("image/svg+xml");
+
+    const socialCard = await request.get("/portfolio-social-card.jpg");
+    expect(socialCard.ok()).toBeTruthy();
+    expect(socialCard.headers()["content-type"]).toContain("image/jpeg");
+    expect((await socialCard.body()).byteLength).toBeLessThan(300_000);
   });
 
   test("loads without browser errors or failed same-origin resources", async ({
